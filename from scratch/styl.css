@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: sans-serif;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar sidebar main main"
+    "con1 con1 con2 con3"
+    "footer footer footer footer";
+
+    grid-gap :0.2rem;
+}
+
+nav{
+    background-color: blanchedalmond;
+    grid-area: nav;
+}
+
+main{
+    background-color: rgb(227, 227, 242)180, 180, 199)208, 208, 232);
+    grid-area: main;
+}
+
+#sidebar{
+    background-color: aquamarine;
+    grid-area: sidebar;
+    
+}
+
+#con1{
+    background-color: blueviolet;
+    grid-area: con1;
+}
+
+#con2{
+    background-color: brown;
+    grid-area: con2;
+}
+
+#con3{
+    background-color: burlywood;
+    grid-area: con3;
+}
+
+footer{
+    background-color: cadetblue;
+    grid-area: footer;
+}
+
+.image1{
+    width: 200px;
+    height: fit-content;
+    vertical-align: middle;
+    padding: 5px 5px 5px 5px;
+}
