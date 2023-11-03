@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font: sans-serif;
+}
+
+p, li{
+    font-size: large;
+    font-weight: bold;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar sidebar main main"
+    "con1 con1 con2 con3"
+    "footer footer footer footer";
+
+    grid-gap :0.2rem;
+}
+
+nav{
+    /* background-color: blanchedalmond; */
+    border: 1px solid black;
+    grid-area: nav;
+}
+
+main{
+    /* background-color: chocolate; */
+    border: 1px solid black;
+    grid-area: main;
+}
+
+#sidebar{
+    /* background-color: aquamarine; */
+    border: 1px solid black;
+    grid-area: sidebar;
+    
+}
+
+#con1{
+    /* background-color: blueviolet; */
+    border: 1px solid black;
+    grid-area: con1;
+}
+
+#con2{
+    /* background-color: brown; */
+    border: 1px solid black;
+    grid-area: con2;
+}
+
+#con3{
+    /* background-color: burlywood; */
+    border: 1px solid black;
+    grid-area: con3;
+}
+
+footer{
+    background-color: greenyellow;
+    border: 1px solid black;
+    grid-area: footer;
+}
+
+.image1{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.persion{
+    align-content: flex-start;
+    direction: rtl;
+    font-size: large;
+    padding: 1%;
+    
+    /* align-items: end; */
+}
+
+.Icon{
+    width: 30px;
+    height: 30px;
+    padding-right: 5px;
+}
+
+#ForReccomendations{
+    width: 250px;
+    height: 150px;
+    display: block;
+}
