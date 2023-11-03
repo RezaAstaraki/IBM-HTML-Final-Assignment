@@ -62,7 +62,7 @@ main{
 }
 
 footer{
-    /* background-color: cadetblue; */
+    background-color: greenyellow;
     border: 1px solid black;
     grid-area: footer;
 }
@@ -73,10 +73,11 @@ footer{
     vertical-align: middle;
 }
 
-#persion{
+.persion{
     align-content: flex-start;
     direction: rtl;
     font-size: large;
+    padding: 1%;
     
     /* align-items: end; */
 }
