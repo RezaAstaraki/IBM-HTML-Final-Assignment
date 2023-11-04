@@ -16,7 +16,16 @@ i {
   vertical-align: middle;
 }
 
-.menu-ul > li {
+#colapse_button {
+  display: none;
+  background-color: rgba(240, 248, 255, 0);
+  border: 0px;
+  align-items: stretch;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.menu_ul > li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -35,7 +44,7 @@ i {
   height: 140px;
   justify-content: space-between;
 }
-.menu-ul {
+.menu_ul {
   display: inherit;
   align-items: stretch;
 }
@@ -46,7 +55,23 @@ i {
   padding-left: 50px;
   padding-right: 5px;
 }
-/* li :hover {
-  background-color: aquamarine;
-  color: brown;
-} */
+
+.menu_ul > li:hover {
+  box-shadow: rgb(187, 234, 133) 0px 5px 5px 5px;
+  color: rgb(82, 226, 120);
+}
+
+@media screen and (max-width: 800px) {
+  .menu_ul {
+    display: none;
+  }
+  .info {
+    font-size: large;
+  }
+  .fix-header {
+    direction: rtl;
+  }
+  #colapse_button {
+    display: flex;
+  }
+}
