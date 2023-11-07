@@ -15,7 +15,15 @@
 }
 
 body {
-  background-color: lightblue;
+  /* background-image: url(html_finalprojimages/background.jpeg); */
+  /* background-image: url(https://cdn.svgator.com/images/2022/12/snow-globe-city-animation.svg); */
+  background-image: url(html_finalprojimages/snow-globe-city-animation.svg);
+  /* background-image: url(https://cdn.svgator.com/images/2022/06/use-svg-as-background-image-particle-strokes.svg); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 100% 100%;
+
   height: 5000px;
 }
 
@@ -33,7 +41,11 @@ i {
   display: flex;
   padding: 0px 15px;
   justify-content: space-between;
-  background: linear-gradient(to right, rgb(76, 0, 255), rgb(0, 255, 51));
+  background: linear-gradient(
+    to right,
+    rgba(76, 0, 255, 0),
+    rgba(0, 255, 51, 0)
+  );
 }
 
 #info {
@@ -41,6 +53,7 @@ i {
   flex-direction: column;
   justify-content: center;
   padding-left: 10px;
+  color: #fff;
 }
 
 #menu li {
@@ -107,6 +120,8 @@ i {
 fieldset {
   margin: 1em;
   border-radius: 15px;
+  overflow: hidden;
+  backdrop-filter: blur(2px);
 }
 legend {
   margin-left: 25px;
@@ -115,4 +130,9 @@ legend {
   font-size: larger;
   font-weight: bolder;
   color: rgb(158, 239, 212);
+  /* backdrop-filter: blur(15px); */
 }
+/* ::selection {
+  background-color: red;
+  color: blue;
+} */
