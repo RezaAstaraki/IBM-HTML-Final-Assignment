@@ -8,9 +8,7 @@
     font-weight: bolde;
 
 }
-body{
-    background-color: black;
-}
+
 .wrapper{
 height: 100vh;
 width: 100vw;
@@ -19,67 +17,62 @@ justify-content: center;
 align-items: center;
 }
 .box{
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: aliceblue;
     height: 50px;
-    width: 150px;
-    position: relative;
+    width: 300px;
     transition: 1s;
-    overflow: hidden;
-}
-
-.box:hover{
-    background-color:green;
-    box-shadow: 0 0 25px green,0 0 50px green,0 0 75px green
-    ,0 0 125px green ,0 0 200px green;
-
-    -webkit-box-reflect: below 1px linear-gradient(180deg,transparent,black);
+    background-color: aqua;
+    /* overflow: hidden; */
 }
 
 
 
-.box::after{
-display: block;
-content: "";
-height: 1px;
-width: 100%;
-position: absolute;
-left:-100%;
-top: 0;
-background: linear-gradient(90deg,transparent,red);
-transition-property: all;
-animation:ani1 1s infinite;
-
+.wrapper .box .input:focus ~ span{
+    transform: translateY(-30px);
+    font-size: .7em;
+    transition: 1s;
 }
-@keyframes ani1 {
-0%{
-    left: -100%;
+.wrapper .box .input:valid ~ span{
+    transform: translateY(-30px);
+    font-size: .7em;
+    transition: 1s;
 }
-100%{
-    left: 100%;
-}
-    
-}
-.box::before {
-    display: block;
-    content: "";
+.wrapper .box .input:focus ~ i{
     height: 100%;
-    width: 1px;
-    position: absolute;
-    left:0%;
-    top: -100%;
-    background: linear-gradient(0deg,transparent,blue);
-    transition-property: all;
-    animation:ani2 1s infinite;
-    animation-delay: .75s;
+    transition: 1s;
 }
-@keyframes ani2 {
-    0%{
-        top: 100%;
-    }
-    100%{
-        top: -100%;
-    }
+.wrapper .box .input:valid ~ i{
+    height: 100%;
+    transition: 1s;
+}
+span{
+    position: absolute;
+    color: red;
+    top: 25%;
+    left: 0;
+    padding-left: 10px;
+    z-index: 3;
+}
+
+i{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    bottom: 0;
+    z-index: 1;
+}
+.input{
+    padding: 10px;
+    color: blueviolet;
+    border: none;
+    outline: none;
+    z-index: 3;
+    background: transparent;
+
 }
