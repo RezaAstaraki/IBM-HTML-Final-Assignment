@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="font/lalezar.ttf">
     <title>for div</title>
 </head>
 <body>
     <div class="container">
         <nav>
-                <h5 style="border: 1px solid blue;"> Mostafa Mohammadi Resume </h5>
-                <a href="www.mostafa.mehr.1983@gmail.com"> <img src="email.png" alt="email icon" class="Icon"> www.mostafa.mehr.1983@gmail.com  </a>
+                <h5> Mostafa Mohammadi Resume </h5>
+                <a href="www.google.com"> <img src="email.png" alt="email icon" class="Icon"> www.mostafa.mehr.1983@gmail.com  </a>
                 <p> <img src="phone.png" alt="phone" class="Icon"> tel : 09354964735</p>         
         </nav>
 
-        <div id="button-div">
-            <button type="text"><img src="About.png" alt="About" class="Icon"> About Me</button>
-            <button type="text"><img src="MySkills.jfif" alt="MySkills" class="Icon"> Skills</button>  
+        <div class="menu">
+            <ul>
+                <li class="top-icon">About</li>
+                <li class="top-icon">My Work</li>
+                <li class="top-icon">Reccomendations
+                    <ul>
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
         <main>
@@ -30,7 +40,8 @@
             <img src="skatter-programmer.gif" alt="Programmer" class="image1">
         </div>
         <div id="con1">
-            <h1>Skills</h1> 
+            <h1>Skills</h1>
+            <!-- <li><figure><img src="c++.png" alt="cIcon" class="Icon"></figure> Object Oriented Progrmming</li>  -->
             <li> <img src="c++.png" alt="C Icon" class="Icon">Object Orient Programmer in C++</li>
             <li> <img src="front.png" alt="front Icon" class="Icon">Front End Developer</li>
             <li> <img src="mechanice.png" alt="mechanice Icon" class="Icon">Mechanic Engineering</li>
@@ -53,7 +64,8 @@
         </div>
         <footer>       
         <form action="botton">
-            <p>please insert your ideas</p><button>submit</button>
+            <p>please insert your ideas</p> 
+            <button>submit</button>
             <input type="email" placeholder="Email Address">
             <input type="text" name="" id="ForReccomendations" placeholder="please insert here">
         </form>
