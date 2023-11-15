@@ -3,17 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>menu</title>
     <link rel="stylesheet" href="teststyle.css">
+    <style>
+        .blur {
+            filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="box">
-            <input class="input" type="text"  required>
-            <span>User Name</span>
-            <i></i>
-        </div>
-    </div>
+    <nav class="menu-contianer">
+        <ul>
+            <li class="active">
+                <div class="indicator-container">
+                    <div class="indicator move"></div>
+                </div>
+                <i>
+                    <ion-icon name="home-outline"></ion-icon>
+                </i>
+                <div class="text">Home</div>
+            </li>
+            <li>
+                <i>
+                    <ion-icon name="restaurant-outline"></ion-icon>
+                </i>
+                <div class="text">Messages</div>
+            </li>
+            <li class="">
+                <i>
+                    <ion-icon name="build-outline"></ion-icon>
+                </i>
+                <div class="text">Servives</div>
+            </li>
+            <li>
+                <i>
+                    <ion-icon name="people-outline"></ion-icon>
+                </i>
+                <div class="text">About US</div>
+            </li>
+            <li>
+                <i>
+                    <ion-icon name="settings-outline"></ion-icon>
+                </i>
+                <div class="text">Settings</div>
+            </li>
+        </ul>
+    </nav>
+    </body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    var centers = []
+    var lis = document.querySelectorAll('nav.menu-contianer ul li')
+    lis.forEach(function(li) {
+    var rect = li.getBoundingClientRect();
+    var center = rect.left ;
+    // console.log(rect)
     
-</body>
+    centers.push(center);
+    });
+
+console.log(centers);
+</script>
 </html>
