@@ -76,7 +76,7 @@ nav.menu-contianer ul li.active i{
 }
 div.indicator-container{
 position: absolute;
-left: 0;
+/* left: 0; */
 }
 div.indicator{
     position: relative;
@@ -87,7 +87,7 @@ div.indicator{
     border-radius:50% ;
     z-index: 0;
     bottom: 25px;
-    left: 15px;
+    /* left: 15px; */
 }
 div.indicator::before{
     position: absolute;
@@ -113,9 +113,9 @@ div.indicator::after{
 }
 .move{
     /* transform: translateX(calc(80.13333129882812px / 2 + 50px)); */
-    transform: translateX(calc(117.5px));
+    /* transform: translateX(calc(117.5px)); */
     /* top: 93px; */
-    /* left:1; */
+    left:calc(122px - 15px);
 
     transition: .5s;
 }
