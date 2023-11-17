@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cloud-crl : rgb(114, 108, 97);
+    --cloud-shadow-clr:#444;
+    --height-of-drop:350px
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #232323;
+}
+div.container{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    width: 100%;
+    border-bottom:#333 solid 2px;
+    position: relative;
+}
+div.cloud{
+    position: relative;
+    height: 100px;
+    width: 300px;
+    background-color: var(--cloud-crl);
+    border-radius: 100px;
+    filter: drop-shadow(10px 10px 0 var(--cloud-shadow-clr))
+    ;
+    z-index: 1;
+
+    animation: flash 2s infinite steps(1) ;
+}
+@keyframes flash {
+    0%{
+        /* background-color:  rgb(173, 166, 155); */
+        filter:drop-shadow(10px 10px 0 var(--cloud-shadow-clr)) brightness(1)
+        ;
+
+
+    }
+    49%{
+        /* filter: brightness(1); */
+        /* background-color: red; */
+    }
+    50%{
+        /* background-color:  rgb(173, 166, 155); */
+        /* filter: brightness(5); */
+    }
+    60%{
+        /* filter: brightness(1); */
+    }
+    95%{
+        
+        filter:
+        drop-shadow(0 0 25px white) 
+        brightness(10)
+        ;
+
+    }
+    
+
+
+
+}
+div.cloud::before{
+    position: absolute;
+    content: '';
+    height: 110px;
+    width: 110px;
+    bottom: 50%;
+    background: var(--cloud-crl);
+    left: 10%;
+    border-radius: 50%;
+    box-shadow: 60px -25px 0 15px var(--cloud-crl);
+
+}
+div.cloud::after{
+    position: absolute;
+    content: '';
+    height: 60px;
+    width: 60px;
+    bottom: 65%;
+    background: var(--cloud-crl);
+    right: 15%;
+    border-radius: 50%;
+}
+
+
+.drop{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background-color: deepskyblue;
+    animation: rain 3s normal infinite ;
+    opacity: 0;
+    z-index: -1;
+}
+@keyframes rain{
+    0%{
+        transform:scaleY(1) ;
+
+    }
+    1%{
+        transform:scaleY(15) ;
+        opacity: 1;
+
+    }
+    78%{
+
+        transform: translateY(var(--height-of-drop))
+        scaleY(2);
+
+    }
+    79%{
+        transform: translateY(var(--height-of-drop))
+        scaleX(1) 
+        scaleY(1)
+    }
+    81%{
+        transform: translateY(var(--height-of-drop)) scaleX(17) scaleY(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scaleX(15) translateY(var(--height-of-drop));
+        opacity: 0;
+    }
+    
+}

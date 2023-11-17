@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rainy cloud</title>
+    <link rel="stylesheet" href="rainy cloud.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="cloud">
+        </div>
+        <span class="drop"></span>
+    </div>
+    
+</body>
+<script>
+    function rand_between(a,b){
+        let res = Math.floor(Math.random() * (b - a + 1)) + a;
+        return res
+    }
+    function adddrop(){
+        let space = document.querySelector('div.container')
+        drop = document.createElement('span')
+        let cloud = document.querySelector('div.cloud')
+        let left_limit = cloud.getBoundingClientRect().left+5
+        let right_limit = cloud.getBoundingClientRect().right-5
+        let top_limit = cloud.getBoundingClientRect().top+40
+        console.log(rand_between(left_limit,right_limit))
+        drop.classList.add('drop')
+        drop.style.left = rand_between(left_limit,right_limit) + 'px'
+        drop.style.top = rand_between(0,top_limit) + 'px'
+        drop.style.animationDelay = -rand_between(0,100)*.03 + 's'
+        drop.style.width = rand_between(0,3)+'px'
+
+        space.appendChild(drop)
+    }
+
+    for(let i = 0 ;i<100; i++){
+        adddrop()
+    }
+</script>
+</html>
