@@ -1,22 +1,107 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    list-style: none;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-.nav-bar{
-    display: flex;
-    background: lightblue;
-    height: 40px;
-    padding: 0 20px;
-    /* align-items: center; */
+.nav-bar {
+  display: flex;
+  background: lightblue;
+  height: 40px;
+  padding: 0 20px;
+  align-items: center;
 }
-.nav-bar__menu-items-container{
-    display: flex;
-    padding: 5px;
-    background: red;
+.nav-bar__menu-items-container {
+  display: flex;
+  height: 40px;
+  align-items: center;
 }
-.menu-item{
-    background: yellow;
+.nav-bar__toggle-btn {
+  width: 40px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 3px darkblue;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-shrink: 0;
+  display: none;
+}
+.nav-bar__toggle-btn > span {
+  height: 4px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 2px;
+  width: 70%;
+  border: 1px solid black;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.menu-item {
+  display: flex;
+  /* flex-direction: column; */
+  padding: 0 5px;
+  position: relative;
+  height: 40px;
+  width: max-content;
+  align-items: center;
+  /* justify-content: center; */
+  align-items: center;
+}
+.menu-item::before {
+  content: "";
+  position: absolute;
+  width: 5%;
+  height: 40px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  /* background-color: rgba(119, 109, 82, 0.868); */
+  transition: 0.3s;
+}
+.menu-item:hover::before {
+  border-top: 5px solid green;
+  width: 100%;
+}
+.subMenu__contianer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+  width: max-content;
+  top: 100%;
+  visibility: hidden;
+
+  width: 0;
+}
+.menu-item:hover > .subMenu__contianer {
+  display: block;
+  position: absolute;
+  background: blueviolet;
+  visibility: visible;
+  width: max-content;
+  transition-property: width;
+  transition: 1s;
+}
+.menu-item:hover > .subMenu__contianer--right {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: max-content;
+  z-index: 1000;
+  /* visibility: visible; */
+}
+@media screen and (max-width: 640px) {
+  .nav-bar__toggle-btn {
+    display: flex;
+  }
+  .nav-bar__toggle-btn {
+    display: none;
+  }
 }
