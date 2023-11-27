@@ -30,6 +30,19 @@
 
 
         <section id="home" class="home">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- Define a polygon shape with rounded corners -->
+                <polygon points="0,0 100%,0 100%,100% 0,100%" fill="#yourColor" />
+              
+                <!-- Define a clip-path with rounded corners -->
+                <clipPath id="rounded-clip">
+                  <polygon points="0,0 100%,0 100%,100% 0,100%" />
+                </clipPath>
+              
+                <!-- Apply the clip-path to an image -->
+                <image xlink:href="your-image.jpg" width="100%" height="100%" clip-path="url(#rounded-clip)" />
+              </svg>
+            <img src="images/3c5955c0639c51645bf9af87a69cea19-tumblnails.png" alt="reza astaraki photo" class="portfolio-img">
 
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit itaque, esse nam quia, recusandae ab,
             repellendus
