@@ -424,3 +424,58 @@ section.about {
   transition: 2.3s !important;
   transition-delay: 3s !important;
 }
+/* ============================ skills section ============================ */
+section.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.skills .card {
+  height: 150px;
+  width: 150px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.skills .card .circle {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: conic-gradient(
+    var(--clr) 0deg calc(var(--value) * 360deg),
+    transparent calc(var(--value) * 360deg) 360deg
+  );
+  border-radius: 50%;
+}
+
+.skills .card .circle::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background-color: red;
+  border-radius: 50%;
+}
+.skills .card .circle::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  background-color: var(--clr);
+  border-radius: 50%;
+  /* top: 0; */
+  left: 0;
+  /* top: -3px; */
+  /* right: calc(50% - 3px); */
+  z-index: var(--z-fixed);
+  transform-origin: 0 73px;
+  /* transform: rotate(calc(360deg * var(--value))); */
+  transform: rotate(75deg);
+}
