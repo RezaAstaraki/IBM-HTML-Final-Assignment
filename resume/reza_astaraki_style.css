@@ -33,13 +33,7 @@
   --body-color: hsl(228, 15%, 20%);
   --container-color: hsl(228, 15%, 15%);
   --shadow-color: hsl(120, 100%, 50%);
-
-  /*==============Fonts and icons============== */
-  /* @font-face {
-    font-family: "Material Symbols Outlined";
-    src: url(fonts\kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzaxHMPdY43zj-jCxv3fzvRNU22ZXGJpEpjC_1v-p_4MrImHCIJIZrDCvHOej.woff2)
-      format("woff2");
-  } */
+  --bg-clr: #2b2d2c;
 
   /*================FONT AND TYPOGRAPHY======== */
   --biggest-font-size: 2rem;
@@ -250,8 +244,8 @@ section {
   padding: 3rem 1rem;
   letter-spacing: 0.1rem;
 }
-section:nth-child(even) {
-  background: #262b25;
+section:nth-child(odd) {
+  background: var(--bg-clr);
 }
 /* ======================= enter-lef&right section ======================= */
 .effect-explanation {
@@ -281,7 +275,6 @@ section.home {
 }
 .home .explanation-container {
   position: relative;
-  /* transform: translateX(-110vw); */
   flex-grow: 1;
   width: 300px;
   max-width: 400px;
@@ -341,10 +334,6 @@ section.about {
   width: 650px;
 }
 
-/* .about .intro {
-
-} */
-
 .border-frame {
   max-width: 150px;
 }
@@ -382,13 +371,6 @@ section.about {
   transform: translateX(0);
   transition: 2s !important;
 }
-/* .effect-about__first-row-container svg #imageBorder {
-  opacity: 0;
-}
-.effect-about__first-row-container__active svg #imageBorder {
-  opacity: 1;
-  transition: 2s !important;
-} */
 .effect-about__first-row-container .intro {
   opacity: 0;
   transform: translateX(50%);
@@ -432,74 +414,6 @@ section.skills {
   align-items: center;
   justify-content: center;
 }
-.skills .skill-container {
-  position: relative;
-  /* min-height: 100px;
-  height: 40%; */
-  height: 220px;
-
-  border: 1px solid white;
-  /* background: blue; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1/1 !important;
-}
-.skills .skill-explanation-container {
-  min-width: 400px;
-  min-height: 60%;
-  height: 65%;
-  max-height: 80%;
-  /* max-height: 300px; */
-  flex-grow: 1;
-  background-color: goldenrod;
-}
-
-.skills .skill-container .main-presentation {
-  display: flex;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  width: 35%;
-  height: 35%;
-  border: 1px solid white;
-  background: red;
-  border-radius: 50%;
-  z-index: 100;
-  transition: 1.5s !important;
-}
-
-.skills .skill-container .main-presentation:hover ~ .skill {
-  transform: translateY(-80px) rotate(calc(var(--children_no) * 360deg / 6));
-  opacity: 1;
-  /* transition: 1.5s; */
-}
-
-.skills .skill-container .skill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 30%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  /* background-color: green; */
-  /* top: calc(0px - 0%); */
-  transform-origin: 50% calc(50% * 1 / 0.3);
-  /* transform:  rotate(calc(var(--children_no) * 360deg / 6)); */
-  /* transform: translateY(-80px) rotate(calc(var(--children_no) * 360deg / 6));
-  transition: 1.5s; */
-  opacity: 0;
-  transition: 1.5s;
-}
-.skills .skill-container .skill div img {
-  width: 75px;
-}
-
-.skills .skill-container .skill div {
-  transform: rotate(calc(var(--children_no) * 360deg / -6));
-}
-
 .skills .crads-contianer {
   display: flex;
   flex-wrap: wrap;
@@ -571,6 +485,7 @@ section.skills {
   font-size: 2rem;
   flex-shrink: 0;
   font-weight: 500;
+  color: var(--clr);
 }
 .skills .card .data span {
   font-size: small;
@@ -578,14 +493,19 @@ section.skills {
 .skills .card .data h2 {
   font-size: 1.25rem;
   font-weight: 600;
+  color: white;
+  text-shadow: var(--clr) 0 0 1px, var(--clr) 0 0 10px, var(--clr) 0 0 100px,
+    var(--clr) 0 0 10px, var(--clr) 0 0 15px, var(--clr) 0 0 25px,
+    var(--clr) 0 0 50px;
 }
-.skills .card .indicator {
+.skills .card .effect-indicator__active {
   animation: rotate_indicator 2s ease-out forwards;
 }
 .skills .card img {
   position: absolute;
-  width: 50px;
+  width: 40px;
   top: 10px;
+  filter: drop-shadow(var(--clr) 0 0 5px);
 }
 
 @keyframes rotate_indicator {
@@ -593,8 +513,7 @@ section.skills {
     rotate: calc(360deg * var(--value));
   }
 }
-.skills .card .data,
-.circle {
+.skills .card .effect-circle__active {
   animation: fade_in 1.5s forwards;
   animation-delay: 1.5s;
 }
@@ -605,4 +524,56 @@ section.skills {
   to {
     opacity: 1;
   }
+}
+/* ============================ certificates section ============================ */
+section.certificates {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 100vh;
+}
+.certificates .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-grow: 1;
+  max-width: 700px;
+  background-color: red;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  border-radius: 15px;
+  padding: 15px;
+  min-width: 300px;
+  flex-grow: 1;
+  width: 40%;
+  max-width: 90%;
+  color: white;
+}
+.certificate-card .logo {
+  margin: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.certificate-card .title {
+  /* text-align: center; */
+}
+.certificate-card a {
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 10px 20px;
+  height: 40px;
+  width: fit-content;
+}
+.certificate-card i {
+  vertical-align: middle;
+  font-size: 0.9em;
 }
