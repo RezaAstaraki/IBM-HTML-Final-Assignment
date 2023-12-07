@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu3</title>
+    <link rel="stylesheet" href="menu3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li class="menu-item" style="--i:1">
+                    <div>item1</div>
+                </li>
+                <li class="menu-item" style="--i:2">
+                    <div>item2</div>
+                </li>
+                <li class="menu-item" style="--i:3">
+                    <div>item3</div>
+                </li>
+                <li class="menu-item" style="--i:4">
+                    <div>item4</div>
+                </li>
+                <li class="menu-item" style="--i:5">
+                    <div>item5</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+<script>
+
+    let menu_btn = document.querySelector('.container .menu')
+    menu_btn.addEventListener('click',(e)=>{
+        // e.target.style.right= 'unset'
+        // e.target.style.bottom= 'unset'
+        e.target.classList.toggle('menu--active')
+    })
+</script>
+</html>
