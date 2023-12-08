@@ -1,0 +1,17 @@
+#intro-text path{
+    stroke-dasharray: var(--length);
+    stroke-dashoffset: var(--length);
+    animation:showtext 1.5s forwards calc(var(--i) * 0.2s);
+
+}
+@keyframes showtext {
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: red;
+        stroke-dashoffset:0;
+        /* opacity: 0; */
+    }
+    
+}
