@@ -528,7 +528,7 @@ section.skills {
 /* ============================ certificates section ============================ */
 section.certificates {
   display: flex;
-  /* flex-wrap: wrap; */
+  letter-spacing: normal;
   gap: 1rem;
   align-items: center;
   justify-content: center;
@@ -538,40 +538,87 @@ section.certificates {
 .certificates .cards-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   flex-grow: 1;
   max-width: 700px;
-  background-color: red;
   align-items: center;
   align-content: center;
   justify-content: center;
 }
 .certificate-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: aqua;
   border-radius: 15px;
   padding: 15px;
-  min-width: 300px;
-  flex-grow: 1;
-  width: 40%;
-  max-width: 90%;
-  color: white;
-}
-.certificate-card .logo {
-  margin: auto;
+  gap: 15px;
   flex-grow: 0;
   flex-shrink: 0;
+  height: 300px;
+  width: 300px;
+  color: white;
+  box-shadow: inset gray 0 0 5px, gray 0 0 15px, gray 0 0 5px;
+  overflow: hidden;
 }
+.certificate-card:hover {
+  box-shadow: inset red 0 0 10px;
+}
+
+.certificate-card .logo {
+  margin: 0 auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 80px;
+  width: 80px;
+  box-shadow: skyblue 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.certificate-card .logo:hover {
+  cursor: pointer;
+  background-color: #03e9f4;
+}
+
 .certificate-card .title {
-  /* text-align: center; */
+  font-size: 14px;
+  font-weight: 530;
+}
+.certificate-card .related-skills span {
+  font-size: 1.1em;
+  font-weight: 530;
 }
 .certificate-card a {
-  border: 1px solid gray;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 5px red, 0 0 10px red, 0 0 25px red;
   border-radius: 20px;
   padding: 10px 20px;
   height: 40px;
   width: fit-content;
+}
+.certificate-card a:hover {
+  background-color: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px#03e9f4, 0 0 50px #03e9f4,
+    0 0 300px #03e9f4;
+}
+.certificate-card .link-container {
+  position: absolute;
+  border-radius: 5px;
+  bottom: -140px;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  width: 300px;
+  left: 0;
+}
+.certificate-card:hover > .link-container {
+  transform: translateY(-125px);
 }
 .certificate-card i {
   vertical-align: middle;
