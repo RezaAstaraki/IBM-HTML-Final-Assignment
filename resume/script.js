@@ -31,6 +31,29 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-  
+// ***********intro svg*******************
+let paths = document.getElementById('intro-text').children;
+for (let i = 0;i<paths.length;i++){
+    paths[i].style.setProperty('--i',i);
+    paths[i].style.setProperty('--length',paths[i].getTotalLength());
+}
 
+// ***************send email*****************************
+const contactForm = document.getElementById('contact_form'),
+    contactMessage = document.getElementById('message');
 
+const sendEmail = (e) => {
+    e.preventDefault()
+    // serviceID - templateID #form  publickey
+    emailjs.sendForm('service_ju33ish', 'template_lbxhsji', '#contact_form', 'EBs9mp-cXQ7WTKn7o')
+        .then(() => {
+            // if sended suscessfullly
+            alert('thankyou')
+        
+        }, () => {
+            // if not sended
+            alert('no send')
+    })
+    
+}
+contactForm.addEventListener('submit',sendEmail)
