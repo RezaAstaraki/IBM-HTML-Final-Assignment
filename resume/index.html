@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <HEader>
+    <header>
         <i id="toggle-menu" class="material-icons">menu</i>
         <nav id="nav-bar" class="toggle-nav-bar">
             <label id="logo">Reza <span>Astaraki</span></label>
@@ -17,14 +17,14 @@
                 <i id="close" onclick="close_toggle_menu()" class="material-icons">close</i>
             </div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active" data-name="home"><a href="#home">Home</a></li>
+                <li data-name="about"><a href="#about">About</a></li>
+                <li data-name="skills"><a href="#skills">Skills</a></li>
+                <li data-name="certificates"><a href="#certificates">Certificates</a></li>
+                <li data-name="contact"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </HEader>
+    </header>
     <main>
         <section id="home" class="home">
             <article class="explanation-container effect-explanation">

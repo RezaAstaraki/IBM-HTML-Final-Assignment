@@ -76,7 +76,7 @@
 }
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden !important;
+  /* overflow-x: hidden !important; */
 }
 input,
 button,
@@ -111,7 +111,7 @@ svg {
   max-width: 100%;
   height: auto;
 }
-/* ====================RESUSABLE CSS CLASSES================== */
+/* ====================header================== */
 #toggle-menu {
   position: fixed;
   left: 1rem;
@@ -181,10 +181,10 @@ header {
   content: "";
   width: 100%;
   pointer-events: none;
-  border-top: 5px solid yellow;
+  border-top: 5px solid #4dffff;
   transform: scale(1, 0);
-  box-shadow: 0 0 5px yellow, 0 0.7rem 10px yellow, 0 1.25rem 25px yellow,
-    0 1.05rem 30px yellow, 0 0.3rem 35px yellow;
+  box-shadow: 0 0 5px #4dffff, 0 0.7rem 10px #4dffff, 0 1.25rem 25px #4dffff,
+    0 1.05rem 30px #4dffff, 0 0.3rem 35px #4dffff;
   transition: transform 0.3s;
 }
 .toggle-nav-bar li:hover::before {
@@ -195,7 +195,25 @@ header {
 }
 .toggle-nav-bar li:hover > a {
   color: white;
+  font-weight: 600;
 }
+.toggle-nav-bar li.active{
+  background-color: red;
+  /* transition: .6s; */
+
+}
+.toggle-nav-bar li.active> a {
+  font-weight: 600;
+  color: white !important;
+
+}
+
+
+
+
+
+
+
 .toggle-nav-bar i {
   position: relative;
   padding-left: 0.5rem;

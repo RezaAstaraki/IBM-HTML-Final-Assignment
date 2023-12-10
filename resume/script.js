@@ -7,12 +7,23 @@ function close_toggle_menu() {
     document.querySelector('#nav-bar').classList.remove('toggle-nav-bar--show')
     document.getElementById('toggle-menu').style.display = 'block'
 }
+document.querySelectorAll('.toggle-nav-bar li a').forEach(menu=>{
+    menu.addEventListener('click',close_toggle_menu)
+})
 
 //**********************/ observer*********************************************
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             let entry_id = entry.target.id;
+
+            // change active menu
+            let active_menu = document.querySelector(`.toggle-nav-bar [data-name="${entry_id}"]`)
+            document.querySelector(`.toggle-nav-bar li.active`).classList.remove('active')
+            active_menu.classList.add('active')
+
+
             let els = document.querySelectorAll(`#${entry_id} [class*="effect-"]`);
 
             els.forEach(el => {
@@ -25,7 +36,7 @@ const observer = new IntersectionObserver((entries) => {
             });
         }
     });
-}, { threshold: 0.8 });
+}, { threshold: 0.3 });
 
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
