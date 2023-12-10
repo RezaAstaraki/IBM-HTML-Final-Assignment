@@ -76,6 +76,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 input,
 button,
@@ -84,7 +85,7 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   font-size: var(--normal-font-size);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 input,
 button,
@@ -265,6 +266,36 @@ section:nth-child(odd) {
 }
 
 /* ============================ home section ============================ */
+
+#intro-text path {
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+  stroke: var(--first-color);
+  animation: showtext 1.5s forwards calc(var(--i) * 0.2s + 3.5s);
+}
+@keyframes showtext {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.fill {
+  animation: flash 5s 11s infinite;
+}
+@keyframes flash {
+  0%,
+  50%,
+  100%,
+  65% {
+    filter: none;
+  }
+
+  55%,
+  60% {
+    filter: drop-shadow(var(--first-color) 0 0 5px)
+      drop-shadow(var(--first-color) 0 0 10px);
+  }
+}
+
 section.home {
   display: flex;
   flex-wrap: wrap;
@@ -626,11 +657,57 @@ section.certificates {
 }
 
 /* ============================ contact section ============================ */
+section.contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+  gap: 1rem;
+}
 
-.box {
+section.contact .header-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.contact .header-row h3 {
+  font-weight: 700;
+  font-size: small;
+  padding: 10px;
+}
+section.contact .header-row h3 span {
+  color: var(--first-color);
+}
+section.contact .header-row h2 {
+  font-weight: 700;
+}
+section.contact .second-row {
+  width: 100%;
+  gap: 2rem;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blue;
+  max-width: 700px;
+}
+
+section.contact .second-row .col1 {
+  background-color: red;
+  min-width: 50%;
+  max-width: 550px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.contact .second-row .box {
   position: relative;
-  width: 380px;
-  height: 420px;
+  min-width: 380px;
+  min-height: 380px;
+  /* max-width: 550px; */
+  flex-grow: 1;
   background: #1c1c1c;
   border-radius: 8px;
   overflow: hidden;
@@ -640,8 +717,8 @@ section.certificates {
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 380px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     0deg,
     transparent,
@@ -659,8 +736,8 @@ section.certificates {
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 380px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     0deg,
     transparent,
@@ -684,8 +761,8 @@ section.certificates {
   position: absolute;
   top: -50%;
   left: -50%;
-  width: 380px;
-  height: 420px;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     0deg,
     transparent,
@@ -731,27 +808,22 @@ section.certificates {
   position: absolute;
   background: #222;
   inset: 4px;
-  padding: 50px 40px;
+  padding: 10px 15px;
   border-radius: 8px;
   z-index: 2;
   display: flex;
   flex-direction: column;
 }
-.box form h2 {
-  color: #ffff;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-align: center;
-}
+
 .box form .inputBox {
   position: relative;
-  width: 300px;
-  margin-top: 35px;
+  max-width: 300px;
+  margin-top: 15px;
 }
 
 .box form .inputBox input {
   position: relative;
-  padding: 20px 10px 10px;
+  padding: 10px 15px 5px;
   width: 100%;
   background: transparent;
   outline: none;
@@ -767,7 +839,7 @@ section.certificates {
 .box form .inputBox span {
   position: absolute;
   left: 0;
-  padding: 20px 0px 10px;
+  padding: 10px 0px 10px;
   color: #8f8f8f;
   font-size: 1em;
   letter-spacing: 0.05em;
@@ -777,7 +849,7 @@ section.certificates {
 .box form .inputBox input:focus ~ span {
   color: #fff;
   font-size: 0.75em;
-  transform: translateY(-34px);
+  transform: translateY(-22px);
 }
 
 .box form .inputBox i {
@@ -794,20 +866,20 @@ section.certificates {
 }
 .box form .inputBox input:valid ~ i,
 .box form .inputBox input:focus ~ i {
-  height: 44px;
+  height: 30px;
+}
+.box form textarea {
+  margin-top: 20px;
+  resize: none;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  /* background-color: red; */
 }
 
-.box form .links {
-  display: flex;
-  justify-content: space-between;
-}
-
-.box form .links a {
-  margin: 10px 0;
-  font-size: 0.75em;
-  color: #8f8f8f;
-  text-decoration: none;
-}
 .box form .links a:hover,
 .box form .links a:nth-child(2) {
   color: #fff;
@@ -815,15 +887,36 @@ section.certificates {
 .box form input[type="submit"] {
   border: none;
   outline: none;
+  color: #050801;
   padding: 9px 25px;
   background: #fff;
   cursor: pointer;
   font-size: 0.9em;
   border-radius: 4px;
   font-weight: 600;
-  width: 100px;
-  margin-top: 10px;
+  width: 150px;
+  margin-top: 25px;
+  box-shadow: inset #03e9f4 0 0 5px, inset #03e9f4 0 0 15px, #03e9f4 0 0 5px;
+}
+.box form input[type="submit"]:hover {
+  background-color: #03e9f4;
+  box-shadow: 0 0 5px #03e9f4, #03e9f4 0 0 15px, #03e9f4 0 0 25px,
+    #03e9f4 0 0 25px, #03e9f4 0 0 25px;
+  color: #ff2770;
+  text-shadow: #ff2770 0 0 5px, #ff2770 0 0 15px;
 }
 .box form input[type="submit"] :active {
   opacity: 0.8;
+}
+
+section.contact .second-row .col2 {
+  display: flex;
+  padding-top: 5px;
+  min-width: 250px;
+  /* align-items: center; */
+  justify-content: center;
+  color: white;
+  background-color: yellowgreen;
+  min-width: 30%;
+  flex-grow: 1;
 }
