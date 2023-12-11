@@ -289,7 +289,7 @@ section:nth-child(odd) {
   stroke-dasharray: var(--length);
   stroke-dashoffset: var(--length);
   stroke: var(--first-color);
-  animation: showtext 1.5s forwards calc(var(--i) * 0.2s + 3.5s);
+  animation: showtext 3.5s forwards calc(var(--i) * 0.07s + 6s);
 }
 @keyframes showtext {
   to {
@@ -297,7 +297,7 @@ section:nth-child(odd) {
   }
 }
 .fill {
-  animation: flash 5s 11s infinite;
+  animation: flash 5s 16s infinite;
 }
 @keyframes flash {
   0%,
@@ -309,6 +309,11 @@ section:nth-child(odd) {
 
   55%,
   60% {
+    filter: drop-shadow(var(--first-color) 0 0 5px)
+      drop-shadow(var(--first-color) 0 0 10px);
+  }
+  75%,
+  85% {
     filter: drop-shadow(var(--first-color) 0 0 5px)
       drop-shadow(var(--first-color) 0 0 10px);
   }
@@ -534,8 +539,11 @@ section.skills {
   font-size: 2rem;
   flex-shrink: 0;
   font-weight: 500;
+  /* opacity: 0; */
   color: var(--clr);
+
 }
+
 .skills .card .data span {
   font-size: small;
 }
@@ -548,7 +556,7 @@ section.skills {
     var(--clr) 0 0 50px;
 }
 .skills .card .effect-indicator__active {
-  animation: rotate_indicator 2s ease-out forwards;
+  animation: rotate_indicator 2.5s ease-out forwards 2s;
 }
 .skills .card img {
   position: absolute;
@@ -564,7 +572,14 @@ section.skills {
 }
 .skills .card .effect-circle__active {
   animation: fade_in 1.5s forwards;
-  animation-delay: 1.5s;
+  animation-delay: 4.5s;
+}
+.skills .card .data h1.effect-data-fadein{
+  opacity: 0;
+}
+.skills h1.effect-data-fadein__active{
+  animation: fade_in 1.5s forwards;
+  animation-delay: 5.5s;
 }
 @keyframes fade_in {
   0% {

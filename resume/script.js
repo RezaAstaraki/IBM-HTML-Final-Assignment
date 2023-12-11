@@ -11,6 +11,33 @@ document.querySelectorAll('.toggle-nav-bar li a').forEach(menu=>{
     menu.addEventListener('click',close_toggle_menu)
 })
 
+// ***********************type effext******************
+function type(querySelector,delay=0,typing_speed=150){
+   
+    let typing_el = document.querySelector(querySelector)
+    let text = typing_el.textContent.trim().split('')
+    typing_el.style.width=typing_el.getBoundingClientRect().width+'px'
+    typing_el.style.height=typing_el.getBoundingClientRect().height+'px'
+    typing_el.innerHTML=''
+    let text_step= ''
+    let n = 0
+    setTimeout(()=>{
+     let interval = setInterval(()=>{
+     if(text[n] !== undefined){typing_el.innerHTML+=text[n]}else{
+
+   
+     clearInterval(interval)
+     typing_el.style.height = 'unset'
+     typing_el.style.width= 'unset'
+    }
+     n+=1
+    },typing_speed)
+    },delay)
+ 
+ }
+ type('.name-logo',3500)
+ type('.effect-explanation p.explanation',12000,50)
+
 //**********************/ observer*********************************************
 
 const observer = new IntersectionObserver((entries) => {

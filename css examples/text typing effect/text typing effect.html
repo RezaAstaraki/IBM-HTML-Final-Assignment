@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text typing effect</title>
+    <link rel="stylesheet" href="text typing effect.css">
+</head>
+<body>
+    <h1 class="text-type">
+        Reza Astaraki
+    </h1>
+    
+</body>
+<script>
+function type(querySelector,delay=0,typing_speed=150){
+   
+   let typing_el = document.querySelector(querySelector)
+   let text = typing_el.textContent.trim().split('')
+   typing_el.style.width=typing_el.getBoundingClientRect().width+'px'
+   typing_el.innerHTML=''
+   let text_step= ''
+   let n = 0
+   setTimeout(()=>{
+    let interval = setInterval(()=>{
+    (text[n] !== undefined)?typing_el.innerHTML+=text[n]:
+    clearInterval(interval)
+    n+=1
+   },typing_speed)
+   },delay)
+
+}
+type('.text-type',3000)
+
+//    typing_el.innerHTML=text[0]
+//    setTimeout()
+
+</script>
+</html>

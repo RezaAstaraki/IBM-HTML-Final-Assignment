@@ -1,0 +1,36 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    color: aqua;
+}
+h1{
+    position: relative;
+    overflow: hidden;
+    background-color: blueviolet;
+    border-right: solid 3px white;
+}
+/* h1::before{
+    position: absolute;
+    content: 'ikaratsA a ';
+    background-color: rgba(148, 160, 95, 0.459);
+    border-left: 3px white solid;
+    animation: text-typing 1s linear infinite;
+    right: -3px;
+}
+@keyframes text-typing {
+    to{
+        border-left:#333 solid 3px;
+    }
+
+} */
