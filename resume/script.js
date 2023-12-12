@@ -11,6 +11,30 @@ document.querySelectorAll('.toggle-nav-bar li a').forEach(menu=>{
     menu.addEventListener('click',close_toggle_menu)
 })
 
+// *******************resize window event******************
+function check_row_social() {
+    let social_row_home = document.querySelector('.home .col2-social')
+    let home_section = document.querySelector('section.home')
+    if (home_section.getBoundingClientRect().bottom < social_row_home.getBoundingClientRect().bottom) {
+        social_row_home.style.display='none'
+        
+    } else {
+        social_row_home.style.display='flex'
+    }
+}
+check_row_social()
+window.addEventListener('resize', () => {
+    check_row_social()
+
+
+})
+
+//**************read more **********************/
+document.querySelector('section.qualifications .read-more button').addEventListener('click', (e) => {
+    document.querySelector('section.qualifications  .read-more').style.display='none'
+    document.querySelector('section.qualifications').style.height='100%'
+})
+
 // ***********************type effext******************
 function type(querySelector,delay=0,typing_speed=150){
    
