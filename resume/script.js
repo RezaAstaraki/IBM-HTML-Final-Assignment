@@ -110,11 +110,11 @@ const sendEmail = (e) => {
     emailjs.sendForm('service_ju33ish', 'template_lbxhsji', '#contact_form', 'EBs9mp-cXQ7WTKn7o')
         .then(() => {
             // if sended suscessfullly
-            alert('thankyou')
+            console.log('thankyou')
         
         }, () => {
             // if not sended
-            alert('no send')
+            console.log('no send')
     })
     
 }
