@@ -81,7 +81,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;;
 }
 html {
   scroll-behavior: smooth;
@@ -327,6 +327,10 @@ section:nth-child(odd) {
   }
 }
 
+section{
+  overflow-x: hidden;
+}
+
 section.home {
   display: flex;
   flex-wrap: wrap;
@@ -334,6 +338,7 @@ section.home {
   align-items: center;
   gap: 1rem;
   height: 100vh;
+  overflow-x: hidden;
 }
 .home .explanation-container {
   position: relative;
@@ -389,6 +394,7 @@ section.about {
   justify-content: center;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .about__first-row-container {
@@ -434,7 +440,7 @@ section.about {
 .effect-about__first-row-container__active svg {
   opacity: 1;
   transform: translateX(0);
-  transition: 2s !important;
+  transition: 2s .5s !important;
 }
 .effect-about__first-row-container .intro {
   opacity: 0;
@@ -443,7 +449,7 @@ section.about {
 .effect-about__first-row-container__active .intro {
   opacity: 1;
   transform: translateX(0);
-  transition: 2s !important;
+  transition: 2s 1.5s!important;
 }
 
 .effect-p1 {
@@ -456,7 +462,7 @@ section.about {
   opacity: 1;
   transform: scale(1);
   filter: blur(0px);
-  transition: 3s !important;
+  transition: 3s 2s !important;
 }
 .effect-p2 {
   filter: blur(5px);
@@ -469,7 +475,7 @@ section.about {
   transform: translateY(0) scale(1);
   filter: blur(0px);
   transition: 2.3s !important;
-  transition-delay: 3s !important;
+  transition-delay: 5s !important;
 }
 /* ============================ skills section ============================ */
 section.skills {
@@ -667,7 +673,10 @@ section.qualifications {
 .certificate-card:hover {
   box-shadow: inset red 0 0 10px;
 }
-
+.certificate-card>a{
+  width: fit-content;
+  margin: 0 auto;
+}
 .certificate-card .logo {
   margin: 0 auto;
   flex-grow: 0;
@@ -1001,13 +1010,18 @@ section.contact .second-row .box {
   margin-top: 25px;
   color: white;
   position: relative;
-  box-shadow: 0 0 5px red, 0 0 10px red, 0 0 25px red;
+  box-shadow: 0 0 5px gray;
   border-radius: 20px;
   padding: 10px 20px;
   height: 40px;
   width: fit-content;
 }
-.box form input[type="submit"]:hover {
+
+.box form:valid input[type="submit"]{
+  box-shadow: 0 0 5px red, 0 0 10px red, 0 0 25px red;
+}
+
+.box form:valid input[type="submit"]:hover {
   background-color: #03e9f4;
   color: #050801;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
