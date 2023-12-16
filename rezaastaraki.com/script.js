@@ -59,8 +59,8 @@ function type(querySelector,delay=0,typing_speed=150){
     },delay)
  
  }
- type('.name-logo',3500)
- type('.effect-explanation p.explanation',12000,50)
+ type('.name-logo',1200,100)
+ type('.effect-explanation p.explanation',5500,30)
 
 //**********************/ observer*********************************************
 

@@ -269,23 +269,23 @@ section:nth-child(odd) {
 /* ======================= enter-lef&right section ======================= */
 .effect-explanation {
   transform: translateX(-110vw);
-  transition: transform 2s ease-out;
+  transition: transform 1s ease-out;
 }
 .effect-profile-picture-container {
   transform: translateX(110vw);
-  transition: translateX 2.5s ease-out;
+  transition: translateX 1s ease-out;
 }
 .effect-explanation__active {
   transform: translateX(0);
 }
 .effect-profile-picture-container__active {
   transform: translateX(0);
-  transition: 3.5s ease-in-out !important;
+  transition: 1.5s ease-in-out !important;
 }
 .effect-social-container {
   opacity: 0;
   scale: 5;
-  transition: 2s 19s !important;
+  transition: 2s 9s !important;
 }
 .effect-social-container__active {
   opacity: 1;
@@ -297,7 +297,7 @@ section:nth-child(odd) {
   stroke-dasharray: var(--length);
   stroke-dashoffset: var(--length);
   stroke: var(--first-color);
-  animation: showtext 3.5s forwards calc(var(--i) * 0.07s + 6s);
+  animation: showtext 1.5s forwards calc(var(--i) * 0.07s + 3s);
 }
 @keyframes showtext {
   to {
@@ -305,7 +305,7 @@ section:nth-child(odd) {
   }
 }
 .fill {
-  animation: flash 5s 16s infinite;
+  animation: flash 5s 6s infinite;
 }
 @keyframes flash {
   0%,
@@ -449,7 +449,7 @@ section.about {
 .effect-about__first-row-container__active .intro {
   opacity: 1;
   transform: translateX(0);
-  transition: 2s 1.5s!important;
+  transition: 1s 1.5s!important;
 }
 
 .effect-p1 {
@@ -462,7 +462,7 @@ section.about {
   opacity: 1;
   transform: scale(1);
   filter: blur(0px);
-  transition: 3s 2s !important;
+  transition: .7s 2s !important;
 }
 .effect-p2 {
   filter: blur(5px);
@@ -474,8 +474,8 @@ section.about {
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0px);
-  transition: 2.3s !important;
-  transition-delay: 5s !important;
+  transition: 1.2s !important;
+  transition-delay: 2s !important;
 }
 /* ============================ skills section ============================ */
 section.skills {
@@ -764,6 +764,7 @@ section.qualifications .read-more button {
   cursor: pointer;
   font-weight: 600;
   font-size: 1.5rem;
+  /* background-color: rgba(255, 0, 0, 0.103); */
   text-shadow: black 0 0 10px;
 }
 section.qualifications .read-more button i {
@@ -803,7 +804,6 @@ section.contact .second-row {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  /* background-color: blue; */
   max-width: 700px;
 }
 
