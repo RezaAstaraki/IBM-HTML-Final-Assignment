@@ -588,10 +588,15 @@ section div.row h1 {
 }
 .skills .card img {
   position: absolute;
+  transform: translateY(100%);
   width: 40px;
   top: 10px;
   filter: drop-shadow(var(--clr) 0 0 5px);
   animation: shine infinite calc(var(--value) * 10s) calc(1 / var(--value) * 5s);
+}
+.skills .card .effect-indicator__active+img{
+  transform: translateY(0);
+  transition: .5s 5s !important;
 }
 @keyframes shine {
   0%,
